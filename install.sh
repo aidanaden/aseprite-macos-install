@@ -57,15 +57,6 @@ function build_app() {
   yes qy | hdiutil attach -quiet -nobrowse -noverify -noautoopen -mountpoint mount ./Aseprite-v1.3.9.1-trial-macOS.dmg
   cp -r mount/Aseprite.app .
   hdiutil detach mount
-
-  # printf 'Copy built aseprite to app? (y/n)? '
-  #   read answer
-  # if [ "$answer" != "${answer#[Yy]}" ] ;then
-  #   echo Yes
-  # else
-  #   echo No
-  # fi
-
   rm -rf ./Aseprite.app/Contents/MacOS/aseprite
   cp -r ./build/bin/aseprite ./Aseprite.app/Contents/MacOS/aseprite
   rm -rf ./Aseprite.app/Contents/Resources/data
